@@ -1,0 +1,1695 @@
+/**
+ * Custom CSS Additions
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800&display=swap');
+
+/* Smooth page load */
+body {
+    opacity: 0;
+    animation: fadeInBody 0.5s ease forwards;
+}
+
+@keyframes fadeInBody {
+    to { opacity: 1; }
+}
+
+/* Header improvements */
+.site-header {
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.site-header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+/* Hero parallax effect */
+.hero-background img {
+    transition: transform 0.1s ease-out;
+}
+
+/* Button hover effects */
+.video-play-btn {
+    box-shadow: 0 0 0 0 rgba(196, 18, 48, 0.7);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(196, 18, 48, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(196, 18, 48, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(196, 18, 48, 0);
+    }
+}
+
+/* Stats hover */
+.stat-item {
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+}
+
+/* Signing items hover */
+.signing-item {
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+.signing-item:hover {
+    box-shadow: 0 10px 40px rgba(196, 18, 48, 0.3);
+}
+
+/* Quote section styling */
+.quote-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+    background-size: 100px;
+    opacity: 0.5;
+}
+
+/* Gallery hover effect */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(196, 18, 48, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* Article hover */
+.article-item {
+    border-left: 3px solid transparent;
+}
+
+.article-item:hover {
+    border-left-color: var(--color-primary);
+}
+
+/* Partner logos animation */
+.partner-logos img {
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.partner-logos img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Footer hover */
+.footer-menu a {
+    position: relative;
+}
+
+.footer-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.footer-menu a:hover::after {
+    width: 100%;
+}
+
+/* Loading state */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .intro-name {
+        font-size: 1.8rem;
+    }
+    
+    .intro-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .quote-text {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .quote-text::before {
+        display: none;
+    }
+    
+    .signing-brand {
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+    }
+    
+    .director-content {
+        gap: 30px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .site-header,
+    .video-modal,
+    .slider-nav {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* ============================================
+   KEVIN PHILLIPS & BRAND AMBASSADORS SECTION
+   ============================================ */
+
+/* Main Wrapper with Gradient */
+.kp-main-wrapper {
+    background: linear-gradient(180deg, #55100e 0%, #560000 30%, #2b0000 100%);
+    padding: 0;
+}
+
+/* Statistics Section */
+.kp-statistics-section {
+    background: transparent;
+    padding: 30px 40px;
+}
+
+.kp-statistics-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.kp-stat-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    height: 175px;
+}
+
+.kp-stat-item .stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: #C42221;
+    line-height: 1;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.kp-stat-item .stat-title {
+    font-size: 26px;
+    color: #C42221;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Kevin Phillips Section */
+.kp-kevin-section {
+    background: transparent;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kp-kevin-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    align-items: stretch;
+}
+
+/* Kevin Left Side */
+.kp-kevin-left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.kp-kevin-name-title {
+    margin-bottom: 20px;
+}
+
+.kp-kevin-name-title .kevin-name {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-size: 28px;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.kp-kevin-name-title .kevin-name .name-kevin {
+    color: #E53935;
+    margin-right: 8px;
+}
+
+.kp-kevin-name-title .kevin-name .name-phillips {
+    color: #FFFFFF !important;
+}
+
+.kp-kevin-name-title .kevin-title {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    color: #F5F0E8;
+    margin: 0 0 20px 0;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.kevin-logo-inline {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.kevin-logo-inline img {
+    max-height: 50px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.kp-kevin-name-title .kevin-logo {
+    margin-top: 5px;
+}
+
+.kp-kevin-name-title .kevin-logo img {
+    height: 45px;
+    width: auto;
+}
+
+.kp-kevin-main-image {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+.kp-kevin-main-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    border-radius: 8px;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.kp-kevin-main-image .kevin-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.kp-kevin-main-image .kevin-badge img {
+    width: 80px;
+    height: auto;
+}
+
+/* Kevin Right Side */
+.kp-kevin-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.kevin-description-top p,
+.kevin-description-bottom p {
+    color: #D4C5B5;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+    text-align: justify;
+}
+
+.kevin-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.kevin-gallery.kevin-gallery-row {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.kevin-gallery-item {
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #6B2540 0%, #4A1A2C 100%);
+}
+
+.kevin-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.kevin-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Brand Ambassadors Section */
+.kp-ambassadors-section {
+    background: transparent;
+    padding: 60px 40px;
+}
+
+.kp-ambassadors-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.kp-ambassadors-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.kp-ambassadors-header .ambassadors-title {
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 140px !important;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.2em !important;
+    word-spacing: 0.15em;
+    background: linear-gradient(90deg, #1a0505 0%, #8B2020 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+    padding-left: 0.2em;
+}
+
+.kp-ambassadors-header .ambassadors-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin: 0;
+    margin-top: -15px;
+}
+
+.kp-ambassadors-header .ambassadors-subtitle .subtitle-prefix {
+    color: #FFFFFF;
+}
+
+.kp-ambassadors-header .ambassadors-subtitle .subtitle-highlight {
+    color: #C42221;
+}
+
+/* Ambassadors Content Layout */
+.kp-ambassadors-content {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.kp-ambassadors-left {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.kp-ambassadors-right {
+    flex: 1;
+}
+
+.kp-ambassadors-main-image {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.kp-ambassadors-main-image img {
+    width: 100%;
+    height: auto;
+    max-height: 750px;
+    object-fit: contain;
+    object-position: bottom left;
+}
+
+.kp-ambassadors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 25px;
+}
+
+.kp-ambassador-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.ambassador-image-wrapper {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #6B2540 0%, #4A1A2C 100%);
+}
+
+.ambassador-image-wrapper img.ambassador-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ambassador-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6B2540 0%, #4A1A2C 100%);
+}
+
+.ambassador-brand-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.ambassador-brand-badge .brand-j88 {
+    background: #FFC107;
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.ambassador-brand-badge .brand-abcvip img {
+    height: 28px;
+    width: auto;
+}
+
+.ambassador-info {
+    padding: 0;
+}
+
+.ambassador-info .ambassador-description {
+    color: #D4C5B5;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Quote Section */
+.kp-quote-section {
+    background-image: url('../../images/Background%20%281%29.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kp-quote-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.kp-quote-content {
+    text-align: left;
+}
+
+.kp-quote-text {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.kp-quote-text .quote-mark {
+    color: #FFFFFF;
+    font-size: 48px;
+}
+
+.kp-quote-author {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.kp-quote-author .quote-line {
+    flex: 0 0 80px;
+    height: 2px;
+    background: #FFFFFF;
+}
+
+.kp-quote-author .quote-author-name {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.kp-quote-image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.kp-quote-image img {
+    width: auto;
+    position: relative;
+    top: 60px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (1024px)
+======================================== */
+@media screen and (max-width: 1024px) {
+    .kp-kevin-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .kp-kevin-left {
+        text-align: center;
+    }
+    
+    .kp-kevin-main-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .kp-ambassadors-header .ambassadors-title {
+        font-size: 48px;
+        letter-spacing: 0.2em;
+        padding-left: 0.2em;
+    }
+    
+    .kp-ambassadors-header .ambassadors-subtitle {
+        font-size: 28px;
+    }
+    
+    .kp-video-news-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Video News Section - hiển thị trên tablet, nằm sau quote */
+    .kp-video-news-section {
+        display: block;
+        order: 5;
+        position: relative;
+        padding: 30px 15px;
+    }
+    
+    /* Ẩn news column, chỉ hiện video player */
+    .kp-news-column {
+        display: none;
+    }
+    
+    .kp-video-news-container {
+        display: block;
+    }
+    
+    .kp-video-player {
+        width: 100%;
+    }
+    
+    /* Banner Section - hiển thị trên tablet */
+    .kp-banner-section {
+        display: block;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (768px)
+======================================== */
+@media screen and (max-width: 768px) {
+    /* Main wrapper - flex column để đổi thứ tự */
+    .kp-main-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Kevin Phillips Section - Mobile - hiện trước */
+    .kp-kevin-section {
+        padding: 30px 15px 0;
+        position: relative;
+        order: 1;
+    }
+    
+    /* Statistics Section - đè lên hình người */
+    .kp-statistics-section {
+        padding: 30px 15px 20px;
+        position: absolute;
+        bottom: -700px;
+        z-index: 10;
+    }
+    
+    .kp-statistics-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .kp-stat-item {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 25px 20px;
+        flex-direction: row;
+        text-align: center;
+        border-top: 4px solid #C42221;
+        position: relative;
+        margin-top: 15px;
+    }
+    
+    .kp-stat-item::before {
+        content: 'SỰ KIỆN NỔI BẬT';
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #C42221;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 15px;
+        border-radius: 3px;
+        white-space: nowrap;
+    }
+    
+    .kp-stat-item .stat-number {
+        font-size: 52px;
+    }
+    
+    .kp-stat-item .stat-title {
+        font-size: 18px;
+    }
+    
+    /* Ambassadors Section order */
+    .kp-ambassadors-section {
+        order: 3;
+    }
+    
+    /* Quote Section order */
+    .kp-quote-section {
+        order: 4;
+    }
+    
+    /* Video News Section - hiển thị trên mobile, nằm sau quote */
+    .kp-video-news-section {
+        display: block;
+        order: 5;
+        position: relative;
+        padding: 30px 15px;
+    }
+    
+    /* Ẩn news column, chỉ hiện video player */
+    .kp-news-column {
+        display: none !important;
+    }
+    
+    .kp-video-news-container {
+        display: block;
+    }
+    
+    .kp-video-player {
+        width: 100%;
+    }
+    
+    .kp-kevin-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .kp-kevin-left {
+        order: -1;
+    }
+    
+    .kp-kevin-name-title {
+        text-align: center;
+    }
+    
+    .kp-kevin-name-title .kevin-name {
+        font-size: 16px;
+    }
+    
+    .kp-kevin-name-title .kevin-title {
+        font-size: 22px;
+    }
+    
+    .kevin-logo-inline img {
+        max-height: 28px;
+    }
+    
+    .kp-kevin-main-image {
+        max-width: 320px;
+        margin: 0 auto;
+        padding-bottom: 150px;
+    }
+    
+    .kevin-description-top,
+    .kevin-description-bottom {
+        font-size: 15px;
+        line-height: 1.7;
+        padding: 0 5px;
+        text-align: justify;
+    }
+    
+    .kevin-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .kevin-gallery-item img {
+        border-radius: 8px;
+    }
+    
+    .kevin-gallery-row {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .kp-ambassadors-right {
+        margin-top: -279px;
+    }
+    
+    /* Ambassadors Section */
+    .kp-ambassadors-section {
+        padding: 40px 15px;
+    }
+    
+    .kp-ambassadors-header .ambassadors-title {
+        font-size: 28px;
+        letter-spacing: 0.15em;
+        padding-left: 0.15em;
+        word-spacing: 0.1em;
+    }
+    
+    .kp-ambassadors-header .ambassadors-subtitle {
+        font-size: 20px;
+        margin-top: -5px;
+    }
+    
+    .kp-ambassadors-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .kp-ambassadors-left {
+        display: block;
+        order: -1;
+    }
+    
+    .kp-ambassadors-main-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .kp-ambassadors-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .ambassador-image-wrapper {
+        aspect-ratio: 16/10;
+    }
+    
+    /* Quote Section - giống thiết kế */
+    .kp-quote-section {
+        padding: 40px 20px 0;
+    }
+    
+    .kp-quote-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .kp-quote-content {
+        order: 1;
+    }
+    
+    /* Ẩn quote mark riêng, dùng quote mark trong text */
+    .kp-quote-text .quote-mark {
+        display: none;
+    }
+    
+    .kp-quote-text {
+        font-size: 22px;
+        line-height: 1.5;
+        font-style: italic;
+        text-align: center;
+    }
+    
+    .kp-quote-text::before {
+        content: '" ';
+        font-size: 28px;
+        font-style: normal;
+    }
+    
+    .kp-quote-text::after {
+        content: ' "';
+        font-size: 28px;
+        font-style: normal;
+    }
+    
+    .kp-quote-author {
+        justify-content: center;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .kp-quote-author .quote-line {
+        flex: 0 0 60px;
+    }
+    
+    .kp-quote-author .quote-author-name {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+    
+    .kp-quote-image {
+        order: 2;
+        justify-content: center;
+    }
+    
+    .kp-quote-image img {
+        max-height: 350px;
+        top: 20px;
+    }
+    
+    .kp-video-news-title h2 {
+        font-size: 32px;
+        letter-spacing: 0.15em;
+    }
+    
+    /* Banner Section - hiển thị trên mobile */
+    .kp-banner-section {
+        display: block;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE (480px)
+======================================== */
+@media screen and (max-width: 480px) {
+    .kp-stat-item .stat-number {
+        font-size: 42px;
+    }
+    
+    .kp-stat-item .stat-title {
+        font-size: 16px;
+    }
+    
+    .kp-kevin-name-title .kevin-name {
+        font-size: 14px;
+    }
+    
+    .kp-kevin-name-title .kevin-title {
+        font-size: 20px;
+    }
+    
+    .kevin-logo-inline img {
+        max-height: 25px;
+    }
+    
+    .kp-ambassadors-header .ambassadors-title {
+        font-size: 50px !important;
+        letter-spacing: 0.1em;
+        padding-left: 0.1em;
+    }
+    
+    .kp-ambassadors-header .ambassadors-subtitle {
+        font-size: 16px;
+    }
+    
+    .kp-quote-text {
+        font-size: 14px;
+    }
+    
+    .kp-video-news-title h2 {
+        font-size: 24px;
+        letter-spacing: 0.1em;
+    }
+}
+
+/* ========================================
+   VIDEO & NEWS SECTION
+   ======================================== */
+.kp-video-news-section {
+    background: #1a0808;
+    padding: 60px 40px 0;
+    position: relative;
+}
+
+.kp-video-news-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* Video Player */
+.kp-video-player {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #2a1515;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-thumbnail {
+    position: relative;
+    cursor: pointer;
+    flex: 1;
+    min-height: 300px;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-thumbnail .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.video-thumbnail .play-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Nav arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.3s ease;
+    z-index: 6;
+}
+
+.nav-arrow.prev {
+    left: 15px;
+}
+
+.nav-arrow.next {
+    right: 15px;
+}
+
+.nav-arrow:hover {
+    background: #C42221;
+    border-color: #C42221;
+}
+
+.nav-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Description overlay inside video */
+.video-description-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 80px 25px 25px;
+}
+
+.video-description {
+    color: #D4C5B5;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+    text-align: justify;
+    font-style: italic;
+}
+
+/* News Column Container */
+.kp-news-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.kp-news-column .arrow-top {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.kp-news-column .arrow-bottom {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* News List Wrapper */
+.kp-news-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+}
+
+.news-scroll-arrows {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-arrow {
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.scroll-arrow:hover {
+    border-color: #C42221;
+    color: #C42221;
+}
+
+.scroll-arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+.news-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.news-item {
+    display: flex;
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    flex: 1;
+}
+
+.news-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.news-thumb {
+    width: 180px;
+    flex-shrink: 0;
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+    background: #2a1515;
+    display: flex;
+}
+
+.news-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFFF;
+    padding: 12px 15px;
+    border-radius: 0 12px 12px 0;
+}
+
+.news-title {
+    color: #C42221;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.news-desc {
+    color: #666;
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Kevin Phillips Title */
+.kp-video-news-title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.kp-video-news-title h2 {
+    font-size: 72px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 10px;
+}
+
+.kp-video-news-title .name-kevin {
+    color: #C42221;
+}
+
+.kp-video-news-title .name-phillips {
+    color: #FFFFFF;
+}
+
+/* Banner Kevin Section */
+.kp-banner-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 40px 0;
+    position: relative;
+}
+
+.kp-four-people-banner {
+    text-align: center;
+    line-height: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.kp-four-people-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    vertical-align: bottom;
+}
+
+/* Responsive Video News */
+@media screen and (max-width: 992px) {
+    .kp-video-news-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .kp-news-column .arrow-top,
+    .kp-news-column .arrow-bottom {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+    }
+    
+    .kp-video-news-title h2 {
+        font-size: 48px;
+        letter-spacing: 5px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .kp-video-news-section {
+        padding: 40px 20px 0;
+    }
+    
+    .news-thumb {
+        width: 120px;
+    }
+    
+    .news-title {
+        font-size: 14px;
+    }
+    
+    .kp-video-news-title h2 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+}
+
+/* ========================================
+   FOOTER SECTION
+   ======================================== */
+.site-footer {
+    background: #1C0F0F;
+    padding: 50px 60px 30px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Footer Top - People & Partners */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Footer People */
+.footer-people {
+    display: flex;
+    gap: 50px;
+    flex: 1;
+}
+
+.footer-person-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.person-image {
+    width: 100px;
+    height: 130px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.person-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.person-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.person-signature {
+    margin-bottom: 10px;
+}
+
+.person-signature img {
+    height: 40px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.person-info {
+    color: #A0A0A0;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.person-title-line1 {
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.person-title-line2 {
+    color: #C9A227;
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+
+.person-year {
+    color: #C9A227;
+    font-size: 11px;
+}
+
+/* Footer Partners */
+.footer-partners {
+    flex-shrink: 0;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px 25px;
+    align-items: center;
+    justify-items: center;
+}
+
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.partner-logo img {
+    max-height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.partner-logo:hover img {
+    opacity: 1;
+}
+
+/* Footer Bottom - Menu & Copyright */
+.footer-bottom {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 18px;
+}
+
+.footer-menu-link {
+    color: #888;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+    padding: 0 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.footer-menu-link::before {
+    content: '|';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.footer-menu-link:first-child::before {
+    display: none;
+}
+
+
+.footer-menu-link:hover {
+    color: #C9A227;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 11px;
+}
+
+/* Footer Responsive */
+@media screen and (max-width: 1200px) {
+    .footer-people {
+        gap: 40px;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px 20px;
+    }
+    
+    .partner-logo img {
+        max-height: 32px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .site-footer {
+        padding: 40px 30px 25px;
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .footer-people {
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-partners {
+        width: 100%;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 15px 25px;
+    }
+    
+    .partner-logo img {
+        max-height: 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .site-footer {
+        padding: 35px 20px 20px;
+    }
+    
+    .footer-people {
+        gap: 25px;
+    }
+    
+    /* Footer People - ẩn hình người, chữ ký trái, info phải */
+    .footer-people {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .footer-person-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .footer-person-item:last-child {
+        border-bottom: none;
+    }
+    
+    /* Ẩn hình người */
+    .person-image {
+        display: none !important;
+    }
+    
+    /* Chữ ký sát lề trái */
+    .person-signature {
+        flex-shrink: 0;
+    }
+    
+    .person-signature img {
+        height: 40px;
+    }
+    
+    /* Info sát lề phải */
+    .person-info {
+        text-align: right;
+    }
+    
+    .person-title-line2 {
+        font-size: 14px;
+    }
+    
+    .person-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px 18px;
+    }
+    
+    .partner-logo img {
+        max-height: 28px;
+    }
+    
+    .footer-menu-link {
+        padding: 0 15px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .footer-person-item {
+        gap: 10px;
+        padding: 12px 0;
+    }
+    
+    .person-signature img {
+        height: 35px;
+    }
+    
+    .person-title-line1 {
+        font-size: 11px;
+    }
+    
+    .person-title-line2 {
+        font-size: 12px;
+    }
+    
+    .person-year {
+        font-size: 11px;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px 12px;
+    }
+    
+    .partner-logo img {
+        max-height: 24px;
+    }
+    
+    .footer-menu {
+        flex-wrap: wrap;
+    }
+    
+    .footer-menu-link {
+        padding: 5px 12px;
+    }
+    
+    .footer-menu-link::before {
+        display: none;
+    }
+}

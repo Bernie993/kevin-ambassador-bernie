@@ -1,0 +1,873 @@
+/*
+Theme Name: Đại Sứ Kevin Phillips
+Theme URI: https://abcvip.com
+Author: Developer
+Description: Theme Đại Sứ Thương Hiệu Kevin Phillips - ABCVIP
+Version: 4.0.0
+Text Domain: dai-su-kevin
+*/
+
+/* ========================================
+   RESET & BASE
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ========================================
+   HEADER - GIỐNG FIGMA 100%
+======================================== */
+.site-header {
+    background: #1a1a1a;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* WordPress Admin Bar offset */
+.admin-bar .site-header {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar .site-header {
+        top: 46px;
+    }
+}
+
+.header-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Left - Menu */
+.header-left {
+    flex: 1;
+}
+
+.header-nav .header-menu-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-nav .header-menu-list li a,
+.header-nav .header-menu-list li .menu-btn,
+.menu-btn {
+    display: inline-block;
+    background: #E31837;
+    color: #fff;
+    padding: 10px 28px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.header-nav .header-menu-list li a:hover,
+.menu-btn:hover {
+    background: #c41530;
+}
+
+/* Center - Logo + Brand */
+.header-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-logo img {
+    height: 28px;
+    width: auto;
+}
+
+.header-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.header-brand-name {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Right - Language */
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.lang-switcher:hover {
+    opacity: 1;
+}
+
+.globe-icon {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+.lang-text {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+.site-main {
+    padding-top: 60px; /* Height of header */
+}
+
+/* ========================================
+   BANNER SLIDER
+======================================== */
+.section-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.slide a {
+    display: block;
+}
+
+/* Slider Navigation */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.slider-nav:hover {
+    background: rgba(227, 24, 55, 0.8);
+}
+
+.slider-nav svg {
+    width: 24px;
+    height: 24px;
+}
+
+.slider-prev {
+    left: 20px;
+}
+
+.slider-next {
+    right: 20px;
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active,
+.dot:hover {
+    background: #E31837;
+    border-color: #E31837;
+}
+
+/* ========================================
+   SECTION INTRO - GIỐNG DESIGN 100%
+   Container = header-container (max-width: 1400px)
+======================================== */
+.section-intro {
+    position: relative;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Để không bị tràn */
+}
+
+/* Wrapper chính - bằng header-container */
+.intro-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    min-height: 200px; /* Giảm chiều cao */
+}
+
+/* Chữ ký bên trái */
+.intro-signature {
+    position: absolute;
+    left: 40px;
+    top: 60px;
+    width: 225px;
+    z-index: 10;
+}
+
+.intro-signature img {
+    width: 100%;
+    height: auto;
+}
+
+/* Nội dung giữa */
+.intro-center {
+    flex: 1;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.intro-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #E31837;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
+.intro-subtitle {
+    margin-bottom: 25px;
+}
+
+.intro-subtitle span {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #E31837;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.intro-logos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.intro-logos img {
+    width: auto;
+    padding: 20px 50px;
+}
+
+/* Placeholder giữ chỗ cho hình người trong flexbox */
+.intro-person-placeholder {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+/* Hình người bên phải - video đè lên người */
+.intro-person {
+    position: absolute;
+    left: 50%;
+    margin-left: 250px;
+    top: 22px;
+    width: 450px;
+    z-index: 1;
+}
+
+.intro-person img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* ========================================
+   VIDEO SLIDER
+======================================== */
+.intro-videos {
+    position: relative;
+    z-index: 5;
+    padding-bottom: 15px; /* Giảm padding */
+}
+
+.intro-videos-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.video-nav {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all 0.3s;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+}
+
+.video-nav:hover {
+    background: #f5f5f5;
+    /*transform: scale(1.05);*/
+}
+
+.video-nav svg {
+    width: 20px;
+    height: 20px;
+}
+
+.video-slider {
+    flex: 1;
+    overflow: hidden;
+}
+
+.video-track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.4s ease;
+}
+
+.video-item {
+    width: calc(33.333% - 17px);
+    min-width: calc(33.333% - 17px);
+    flex-shrink: 0;
+    overflow: hidden;
+    background: transparent;
+}
+
+.video-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+}
+
+.video-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.9;
+    transition: all 0.3s;
+}
+
+.video-play-icon svg {
+    width: 50px;
+    height: 50px;
+}
+
+.video-link:hover .video-play-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-title-overlay {
+    display: none;
+}
+
+.video-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 93%) 100%);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 25px 15px 12px;
+    margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (1024px)
+======================================== */
+@media (max-width: 1024px) {
+    .intro-wrapper {
+        padding: 15px 20px;
+    }
+
+    .intro-signature {
+        width: 150px;
+        left: 20px;
+        top: 50px;
+    }
+
+    .intro-person {
+        width: 320px;
+        margin-left: 100px;
+    }
+
+    .intro-person-placeholder {
+        width: 220px;
+    }
+
+    .intro-title {
+        font-size: 36px;
+    }
+
+    .intro-subtitle span {
+        font-size: 16px;
+    }
+
+    .intro-logos img {
+        padding: 15px 30px;
+    }
+
+    .video-item {
+        width: calc(50% - 13px);
+        min-width: calc(50% - 13px);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET SMALL (900px)
+======================================== */
+@media (max-width: 900px) {
+    .intro-person {
+        width: 280px;
+        margin-left: 50px;
+    }
+
+    .intro-person-placeholder {
+        width: 180px;
+    }
+
+    .intro-signature {
+        width: 120px;
+        left: 15px;
+        top: 45px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (768px)
+======================================== */
+@media (max-width: 768px) {
+    /* Header */
+    .site-header {
+        padding: 10px 0;
+        position: absolute;
+    }
+
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .header-left {
+        flex: 0 0 auto;
+    }
+
+    .header-nav .header-menu-list li a,
+    .header-nav .header-menu-list li .menu-btn,
+    .menu-btn {
+        padding: 2px;
+        font-size: 0;
+        border-radius: 23px;
+        background: #E31837;
+        width: 36px;
+        height: 36px;
+        align-items: center;
+        justify-content: center;
+    }
+    .mb-hiden {
+        display: none;
+    }
+
+    .header-nav .header-menu-list li a::before,
+    .menu-btn::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .header-center {
+        position: static;
+        transform: none;
+        flex: 1;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .header-logo img {
+        height: 50px;    }
+
+    .header-brand-name {
+        font-size: 11px;
+        letter-spacing: 1px;
+        display: block;
+    }
+
+    .header-divider {
+        height: 18px;
+        display: block;
+    }
+
+    .header-right {
+        flex: 0 0 auto;
+    }
+
+    .lang-switcher .lang-text {
+        display: none;
+    }
+
+    .lang-switcher .globe-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Banner responsive */
+    .slider-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-prev {
+        left: 10px;
+    }
+
+    .slider-next {
+        right: 10px;
+    }
+
+    /* Intro Section Mobile */
+    .section-intro {
+        background-size: cover;
+        padding-bottom: 0;
+        display: block;
+        position: relative;
+        overflow: visible;
+        min-height: 650px;
+    }
+
+    /* Wrapper chứa title, subtitle, logos */
+    .intro-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 15px 15px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Chữ ký - hiển thị bên trái người */
+    .intro-signature {
+        display: block !important;
+        position: absolute;
+        left: 5%;
+        top: 340px;
+        width: 90%;
+        max-width: 170px;
+        z-index: 10;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hình người - dịch sang phải để không bị chữ ký đè */
+    .intro-person {
+        position: absolute !important;
+        left: auto !important;
+        right: 0 !important;
+        top: 316px;
+        margin: 0 !important;
+        width: 75%;
+        max-width: 75%;
+        z-index: 1;
+        padding: 0;
+    }
+
+    .intro-person img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .intro-person-placeholder {
+        display: none;
+    }
+
+    /* Nội dung giữa - trong wrapper */
+    .intro-center {
+        padding: 0;
+        order: 1;
+        margin-bottom: 10px;
+    }
+
+    .intro-title {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .intro-subtitle {
+        margin-bottom: 15px;
+    }
+
+    .intro-subtitle span {
+        font-size: 16px;
+    }
+
+    .intro-logos {
+        flex-wrap: nowrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .intro-logos img {
+        max-height: auto;
+        padding: 8px 12px;
+    }
+
+    /* Video Slider Mobile - đè lên bụng, hiện quần */
+    .intro-videos {
+        padding: 0 0 15px;
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+    .intro-videos-container {
+        padding: 0 40px;
+        gap: 10px;
+        position: relative;
+    }
+
+    .video-slider {
+        overflow: hidden;
+    }
+
+    .video-item {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Slide hình chữ nhật ngang */
+
+    .video-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .video-nav svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Video description - nằm trong video */
+    .video-desc {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 93%) 100%) !important;
+        color: #fff !important;
+        font-size: 14px;
+        padding: 30px 15px 15px !important;
+        line-height: 1.5;
+    }
+
+    .video-thumb {
+        position: relative;
+    }
+
+    /* Mũi tên vuông góc bo tròn */
+    .video-nav {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        border-radius: 12px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .video-prev {
+        left: 10px;
+    }
+
+    .video-next {
+        right: 10px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE (480px và nhỏ hơn)
+======================================== */
+@media (max-width: 480px) {
+    .section-intro {
+        min-height: 600px;
+    }
+
+    .intro-person {
+        top: 290px;
+    }
+
+    .intro-signature {
+        top: 315px;
+        max-width: 150px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - EXTRA SMALL MOBILE (390px - iPhone 12 Pro)
+======================================== */
+@media (max-width: 390px) {
+    .section-intro {
+        min-height: 580px;
+    }
+
+    .intro-person {
+        top: 280px;
+    }
+
+    .intro-signature {
+        top: 305px;
+        max-width: 140px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - VERY SMALL MOBILE (360px)
+======================================== */
+@media (max-width: 360px) {
+    .section-intro {
+        min-height: 560px;
+    }
+
+    .intro-person {
+        top: 270px;
+    }
+
+    .intro-signature {
+        top: 295px;
+        max-width: 130px;
+    }
+}

@@ -1,0 +1,215 @@
+/* Admin Theme Options Styling */
+.theme-options-wrap {
+    padding: 20px;
+    max-width: 900px;
+}
+
+.theme-options-wrap h1 {
+    color: #1d2327;
+    margin-bottom: 20px;
+}
+
+.nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.options-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.options-section {
+    margin-bottom: 30px;
+}
+
+.options-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #E31837;
+    color: #1d2327;
+}
+
+.field-group {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.field-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.field-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.field-group input[type="text"],
+.field-group input[type="url"],
+.field-group textarea {
+    width: 100%;
+    max-width: 600px;
+}
+
+.field-group textarea {
+    min-height: 100px;
+}
+
+.field-group .description {
+    margin-top: 8px;
+    color: #646970;
+    font-style: italic;
+}
+
+/* Image Upload */
+.image-upload-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.image-preview {
+    width: 150px;
+    height: 80px;
+    background: #f0f0f1;
+    border: 2px dashed #c3c4c7;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-preview.banner-preview {
+    width: 300px;
+    height: 150px;
+}
+
+.image-preview.video-preview {
+    width: 200px;
+    height: 112px;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Repeater Items */
+.repeater-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.repeater-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.repeater-item-header .slide-number {
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.repeater-item-content {
+    padding: 20px;
+}
+
+.field-row {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.field-col {
+    flex: 1;
+    min-width: 280px;
+}
+
+.field-col label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.field-col .description {
+    margin-top: 8px;
+    color: #646970;
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* Submit Button */
+.theme-options-form .submit {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Three Column Layout */
+.field-row.three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.field-row.three-col .field-col {
+    min-width: auto;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 600px;
+}
+
+.gallery-item .image-preview.small-preview {
+    width: 100%;
+    height: 80px;
+}
+
+.gallery-item .image-upload-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gallery-item .button {
+    font-size: 11px;
+    padding: 2px 8px;
+    margin-top: 5px;
+}
+
+/* Ambassador Preview */
+.image-preview.ambassador-preview {
+    width: 250px;
+    height: 150px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .field-row.three-col {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
