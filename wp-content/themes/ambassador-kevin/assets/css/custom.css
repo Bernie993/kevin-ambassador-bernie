@@ -170,29 +170,45 @@ body {
     to { transform: rotate(360deg); }
 }
 
+
+
+@media (max-width: 1024px) {
+    .d-none {
+        display: none;
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .intro-center {
+        min-width: 100%;
+    }
+
+    .intro-mobile {
+        max-height: 500px;
+    }
+
+}
+
+
 /* Responsive improvements */
 @media (max-width: 820px) {
     .intro-name {
         font-size: 1.8rem;
     }
-    
+
     .intro-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .quote-text {
         font-size: 1.1rem;
         padding: 0 20px;
     }
-    
+
     .quote-text::before {
         display: none;
-    }
-    .d-none {
-        display: none;
-    }
-    .d-block {
-        display: block;
     }
 
     .signing-brand {
@@ -215,9 +231,9 @@ body {
     }
 
     /* Footer Partners Mobile - Chỉ hiển thị trên mobile/tablet */
-        .footer-partners-mobile {
-            width: 100%;
-        }
+    .footer-partners-mobile {
+        width: 100%;
+    }
 
     .partners-mobile-grid {
         display: grid;
@@ -279,14 +295,19 @@ body {
     }
 
 }
-/* Ẩn phần mobile trên desktop */
-@media (min-width: 821px) {
+@media (min-width: 1025px) {
     .d-md-block {
         display: block;
     }
     .d-md-none {
         display: none;
     }
+}
+
+
+/* Ẩn phần mobile trên desktop */
+@media (min-width: 821px) {
+
 
     .footer-copyright {
         color: #666;
@@ -306,7 +327,7 @@ body {
     .slider-nav {
         display: none !important;
     }
-    
+
     body {
         background: white;
         color: black;
@@ -756,31 +777,31 @@ body {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .kp-kevin-left {
         /*text-align: center;*/
     }
-    
+
     .kp-kevin-main-image {
         max-width: 400px;
         margin: 0 auto;
     }
-    
+
     .kp-ambassadors-header .ambassadors-title {
         font-size: 78px;
         letter-spacing: 0.2em;
         padding-left: 0.2em;
     }
-    
+
     .kp-ambassadors-header .ambassadors-subtitle {
         font-size: 28px;
     }
-    
+
     .kp-video-news-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     /* Video News Section - hiển thị trên tablet, nằm sau quote */
     .kp-video-news-section {
         display: block;
@@ -788,20 +809,20 @@ body {
         position: relative;
         padding: 30px 15px;
     }
-    
+
     /* Ẩn news column, chỉ hiện video player */
     .kp-news-column {
         display: none;
     }
-    
+
     .kp-video-news-container {
         display: block;
     }
-    
+
     .kp-video-player {
         width: 100%;
     }
-    
+
     /* Banner Section - hiển thị trên tablet */
     .kp-banner-section {
         display: block;
@@ -818,14 +839,14 @@ body {
         flex-direction: column;
         position: relative;
     }
-    
+
     /* Kevin Phillips Section - Mobile - hiện trước */
     .kp-kevin-section {
         padding: 30px 15px 0;
         position: relative;
         order: 1;
     }
-    
+
     /* Statistics Section - đè lên hình người */
     .kp-statistics-section {
         padding: 30px 15px 20px;
@@ -834,7 +855,7 @@ body {
         z-index: 10;
         width: 100%;
     }
-    
+
     .kp-statistics-container {
         flex-direction: column;
         gap: 20px;
@@ -849,7 +870,7 @@ body {
     .intro-center {
         min-width: 100%;
     }
-    
+
     .kp-stat-item {
         width: 100%;
         max-width: 100%;
@@ -862,7 +883,7 @@ body {
         margin-top: 15px;
         border-radius: 0;
     }
-    
+
     .kp-stat-item::before {
         content: 'SỰ KIỆN NỔI BẬT';
         position: absolute;
@@ -877,25 +898,25 @@ body {
         border-radius: 0px;
         white-space: nowrap;
     }
-    
+
     .kp-stat-item .stat-number {
         font-size: 52px;
     }
-    
+
     .kp-stat-item .stat-title {
         font-size: 18px;
     }
-    
+
     /* Ambassadors Section order */
     .kp-ambassadors-section {
         order: 3;
     }
-    
+
     /* Quote Section order */
     .kp-quote-section {
         order: 4;
     }
-    
+
     /* Video News Section - hiển thị trên mobile, nằm sau quote */
     .kp-video-news-section {
         display: block;
@@ -921,24 +942,24 @@ body {
     .kp-news-column {
         display: none !important;
     }
-    
+
     .kp-video-news-container {
         display: block;
     }
-    
+
     .kp-video-player {
         width: 100%;
     }
-    
+
     .kp-kevin-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .kp-kevin-left {
         order: -1;
     }
-    
+
     .kp-kevin-name-title {
         /*text-align: center;*/
     }
@@ -946,21 +967,21 @@ body {
     .kp-kevin-name-title .kevin-name {
         /*font-size: 16px;*/
     }
-    
+
     .kp-kevin-name-title .kevin-title {
         /*font-size: 22px;*/
     }
-    
+
     .kevin-logo-inline img {
         max-height: 28px;
     }
-    
+
     .kp-kevin-main-image {
         max-width: 320px;
         margin: 0 auto;
         padding-bottom: 150px;
     }
-    
+
     .kevin-description-top,
     .kevin-description-bottom {
         font-size: 15px;
@@ -968,129 +989,129 @@ body {
         padding: 0 5px;
         text-align: justify;
     }
-    
+
     .kevin-gallery {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
     }
-    
+
     .kevin-gallery-item img {
         border-radius: 0px;
     }
-    
+
     .kevin-gallery-row {
         grid-template-columns: 1fr 1fr !important;
     }
     .kp-ambassadors-right {
         margin-top: -279px;
     }
-    
+
     /* Ambassadors Section */
     .kp-ambassadors-section {
         padding: 40px 15px;
     }
-    
+
     .kp-ambassadors-header .ambassadors-title {
         font-size: 63px;
         letter-spacing: 0.15em;
         padding-left: 0.15em;
         word-spacing: 0.1em;
     }
-    
+
     .kp-ambassadors-header .ambassadors-subtitle {
         font-size: 20px;
         margin-top: -5px;
     }
-    
+
     .kp-ambassadors-content {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .kp-ambassadors-left {
         display: block;
         order: -1;
     }
-    
+
     .kp-ambassadors-main-image {
         max-width: 300px;
         margin: 0 auto;
     }
-    
+
     .kp-ambassadors-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .ambassador-image-wrapper {
         aspect-ratio: 16/10;
     }
-    
+
     /* Quote Section - giống thiết kế */
     .kp-quote-section {
         padding: 40px 20px 0;
     }
-    
+
     .kp-quote-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 20px;
     }
-    
+
     .kp-quote-content {
         order: 1;
     }
-    
+
     /* Ẩn quote mark riêng, dùng quote mark trong text */
     .kp-quote-text .quote-mark {
         display: none;
     }
-    
+
     .kp-quote-text {
         font-size: 22px;
         line-height: 1.5;
         font-style: italic;
         text-align: center;
     }
-    
+
     .kp-quote-text::before {
         content: '" ';
         font-size: 28px;
         font-style: normal;
     }
-    
+
     .kp-quote-text::after {
         content: ' "';
         font-size: 28px;
         font-style: normal;
     }
-    
+
     .kp-quote-author {
         justify-content: center;
         flex-direction: row;
         gap: 15px;
         margin-top: 20px;
     }
-    
+
     .kp-quote-author .quote-line {
         flex: 0 0 60px;
     }
-    
+
     .kp-quote-author .quote-author-name {
         font-size: 18px;
         letter-spacing: 2px;
     }
-    
+
     .kp-quote-image {
         order: 2;
         justify-content: center;
     }
-    
+
     .kp-quote-image img {
         max-height: 350px;
         top: 20px;
     }
-    
+
     .kp-video-news-title h2 {
         font-size: 15px;
         letter-spacing: 15px !important;
@@ -1101,7 +1122,7 @@ body {
         vertical-align: middle;
         text-transform: uppercase;
     }
-    
+
     /* Banner Section - hiển thị trên mobile */
     .kp-banner-section {
         display: block;
@@ -1115,39 +1136,39 @@ body {
     .kp-stat-item .stat-number {
         font-size: 42px;
     }
-    
+
     .kp-stat-item .stat-title {
         font-size: 16px;
     }
-    
+
     .kp-kevin-name-title .kevin-name {
         /*font-size: 14px;*/
     }
-    
+
     .kp-kevin-name-title .kevin-title {
         /*font-size: 20px;*/
     }
-    
+
     .kevin-logo-inline img {
         max-height: 25px;
     }
-    
+
     .kp-ambassadors-header .ambassadors-title {
         font-size: 41px;
         letter-spacing: 0.1em;
         padding-left: 0.1em;
     }
-    
+
     .kp-ambassadors-header .ambassadors-subtitle {
         font-size: 12px;
     }
-    
+
     .kp-quote-text {
         font-size: 14px;
     }
 
 
-    
+
     .kp-video-news-title h2 {
         font-size: 24px;
         letter-spacing: 0.1em;
@@ -1466,14 +1487,14 @@ body {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .kp-news-column .arrow-top,
     .kp-news-column .arrow-bottom {
         position: static;
         transform: none;
         margin: 10px 0;
     }
-    
+
     .kp-video-news-title h2 {
         letter-spacing: 31px;
         font-family: Sofia Sans Extra Condensed;
@@ -1490,15 +1511,15 @@ body {
     .kp-video-news-section {
         padding: 40px 20px 0;
     }
-    
+
     .news-thumb {
         width: 120px;
     }
-    
+
     .news-title {
         font-size: 14px;
     }
-    
+
     .kp-video-news-title h2 {
         font-size: 32px;
         letter-spacing: 3px;
@@ -1681,18 +1702,18 @@ body {
     .footer-people {
         gap: 40px;
     }
-    
+
     .partners-grid {
         grid-template-columns: repeat(5, 1fr);
         gap: 15px 20px;
     }
-    
+
     .partner-logo img {
         max-height: 32px;
     }
 
     .kp-stat-item .stat-title {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
@@ -1700,28 +1721,28 @@ body {
     .site-footer {
         padding: 40px 30px 25px;
     }
-    
+
     .footer-top {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
-    
+
     .footer-people {
         justify-content: center;
         gap: 30px;
         flex-wrap: wrap;
     }
-    
+
     .footer-partners {
         width: 100%;
     }
-    
+
     .partners-grid {
         grid-template-columns: repeat(7, 1fr);
         gap: 15px 25px;
     }
-    
+
     .partner-logo img {
         max-height: 35px;
     }
@@ -1731,17 +1752,17 @@ body {
     .site-footer {
         padding: 35px 20px 20px;
     }
-    
+
     .footer-people {
         gap: 25px;
     }
-    
+
     /* Footer People - ẩn hình người, chữ ký trái, info phải */
     .footer-people {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .footer-person-item {
         width: 100%;
         display: flex;
@@ -1751,34 +1772,34 @@ body {
         padding: 15px 0;
         border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    
+
     .footer-person-item:last-child {
         border-bottom: none;
     }
-    
+
     /* Ẩn hình người */
     .person-image {
         display: none !important;
     }
-    
+
     /* Chữ ký sát lề trái */
     .person-signature {
         flex-shrink: 0;
     }
-    
+
     .person-signature img {
         height: 65px;
     }
-    
+
     /* Info sát lề phải */
     .person-info {
         text-align: right;
     }
-    
+
     .person-title-line2 {
         font-size: 14px;
     }
-    
+
     .person-details {
         display: flex;
         justify-content: space-between;
@@ -1786,16 +1807,16 @@ body {
         width: 100%;
         flex-direction: row;
     }
-    
+
     .partners-grid {
         grid-template-columns: repeat(5, 1fr);
         gap: 12px 18px;
     }
-    
+
     .partner-logo img {
         max-height: 28px;
     }
-    
+
     .footer-menu-link {
         padding: 0 15px;
         font-size: 11px;
@@ -1807,30 +1828,30 @@ body {
         gap: 10px;
         padding: 12px 0;
     }
-    
+
     .person-signature img {
         height: 65px;
     }
-    
 
-    
+
+
     .partners-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 10px 12px;
     }
-    
+
     .partner-logo img {
         max-height: 24px;
     }
-    
+
     .footer-menu {
         flex-wrap: wrap;
     }
-    
+
     .footer-menu-link {
         padding: 5px 12px;
     }
-    
+
     .footer-menu-link::before {
         display: none;
     }
@@ -1869,44 +1890,44 @@ body {
         height: 36px;
         background: linear-gradient(90deg, transparent 0%, #8B0000 50%, #ff4d4d 100%);
     }
-    }
+}
 
-    /* Đường line bên phải - gradient từ đỏ đến transparent */
-    .official-partner-badge::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
-        width: calc(50% - 110px);
-        height: 36px;
-        background: linear-gradient(90deg, #ff4d4d 0%, #8B0000 50%, transparent 100%);
-    }
+/* Đường line bên phải - gradient từ đỏ đến transparent */
+.official-partner-badge::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: calc(50% - 110px);
+    height: 36px;
+    background: linear-gradient(90deg, #ff4d4d 0%, #8B0000 50%, transparent 100%);
+}
 
-    .badge-container {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        padding: 4px 30px;
-        background: linear-gradient(180deg, #ff6b4a 0%, #e63c2f 50%, #c41e10 100%);
-        clip-path: polygon(11% 0%, 89% 0%, 100% 60%, 92% 100%, 8% 100%, 0% 60%);
-        min-width: 280px;
-        z-index: 2;
-        box-shadow:
-                0 4px 15px rgba(255, 77, 77, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
+.badge-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 30px;
+    background: linear-gradient(180deg, #ff6b4a 0%, #e63c2f 50%, #c41e10 100%);
+    clip-path: polygon(11% 0%, 89% 0%, 100% 60%, 92% 100%, 8% 100%, 0% 60%);
+    min-width: 280px;
+    z-index: 2;
+    box-shadow:
+            0 4px 15px rgba(255, 77, 77, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
 
-    .badge-text {
-        color: #ffffff;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        position: relative;
-        z-index: 3;
-    }
+.badge-text {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3;
+}
 }
 
 @media (max-width: 480px) {

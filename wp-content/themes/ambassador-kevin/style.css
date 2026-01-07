@@ -507,9 +507,9 @@ ul, ol {
     }
 
     .intro-signature {
-        width: 150px;
-        left: 20px;
-        top: 50px;
+        width: 252px;
+        left: 10px;
+        top: 150%;
     }
 
     .intro-person {
@@ -553,9 +553,9 @@ ul, ol {
     }
 
     .intro-signature {
-        width: 120px;
-        left: 15px;
-        top: 45px;
+        width: 252px;
+        left: 10px;
+        top: 145%;
     }
 }
 
@@ -673,12 +673,15 @@ ul, ol {
         z-index: 1;
     }
 
+    .intro-mobile {
+        margin-left: 55px;
+    }
     /* Chữ ký - hiển thị bên trái người */
     .intro-signature {
         display: block !important;
         position: absolute;
-        left: 5%;
-        top: 340px;
+        left: 0%;
+        top: 300px;
         width: 90%;
         max-width: 170px;
         z-index: 10;
@@ -831,7 +834,7 @@ ul, ol {
     }
 
     .intro-signature {
-        top: 315px;
+        top:  294px;
         max-width: 150px;
     }
 }
@@ -849,7 +852,7 @@ ul, ol {
     }
 
     .intro-signature {
-        top: 305px;
+        top: 270px;
         max-width: 140px;
     }
 }
@@ -867,7 +870,8 @@ ul, ol {
     }
 
     .intro-signature {
-        top: 295px;
+        top: 260px;
         max-width: 130px;
+        left: 0;
     }
 }

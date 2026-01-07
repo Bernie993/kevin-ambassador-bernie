@@ -43,13 +43,13 @@ if (empty($valid_videos)) {
     <div class="intro-person d-none d-md-block">
         <img src="<?php echo esc_url($person); ?>" alt="<?php echo esc_attr($title); ?>">
     </div>
-    
+
     <div class="intro-wrapper">
         <!-- Chữ ký bên trái -->
         <div class="intro-signature">
             <img src="<?php echo esc_url($signature); ?>" alt="Signature">
         </div>
-        
+
         <!-- Nội dung giữa -->
         <div class="intro-center">
             <h2 class="intro-title"><?php echo esc_html($title); ?></h2>
@@ -62,11 +62,11 @@ if (empty($valid_videos)) {
                 <img src="<?php echo esc_url($logos); ?>" alt="ABCVIP Partnership">
             </div>
         </div>
-        
+
         <!-- Placeholder cho hình người (giữ chỗ) -->
         <div class="intro-person-placeholder"></div>
     </div>
-    <div class="d-md-none d-block">
+    <div class="d-md-none d-block intro-mobile">
         <img src="<?php echo esc_url($person); ?>" alt="<?php echo esc_attr($title); ?>">
     </div>
 
@@ -77,14 +77,14 @@ if (empty($valid_videos)) {
             <button class="video-nav video-prev" aria-label="Previous">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
-            
+
             <div class="video-slider">
                 <div class="video-track" data-total="<?php echo count($valid_videos); ?>">
-                    <?php foreach ($valid_videos as $video): 
+                    <?php foreach ($valid_videos as $video):
                         $thumb = isset($video['thumb']) ? $video['thumb'] : ((!empty($video['image']) && $video['image'] !== 'default') ? wp_get_attachment_image_url($video['image'], 'large') : THEME_URI . '/images/Article.png');
                         $desc = isset($video['description']) ? $video['description'] : '';
                         $url = isset($video['video_url']) ? $video['video_url'] : '#';
-                    ?>
+                        ?>
                         <div class="video-item">
                             <a href="<?php echo esc_url($url); ?>" class="video-link" target="_blank">
                                 <div class="video-thumb">
@@ -101,7 +101,7 @@ if (empty($valid_videos)) {
                     <?php endforeach; ?>
                 </div>
             </div>
-            
+
             <button class="video-nav video-next" aria-label="Next">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
